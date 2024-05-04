@@ -37,4 +37,11 @@ export const constValues = {
   removedPostStatus: 'REMOVED',
   JsonDataNumber: '5',
   JsonDataText: 'five',
+  profilePath: 'Home / Profile ',
+  firstBioProfile: 'First profile bio',
+  secondBioProfile: 'Second profile bio',
+  jsonData: {
+    number: '5',
+    text: 'five',
+  },
 };

@@ -29,4 +29,7 @@ export const postSelectors = {
   actionButton: 'div[class="sc-cPlDXj crxVEM adminjs_ButtonGroupItem"]',
   dropDownMenu: 'section[class="sc-dmqHEX sc-BKAtq eaBOiP bixteG adminjs_Box adminjs_DropDown-Stick-right adminjs_DropDownMenu adminjs_Box"]',
   editOption: 'a[data-testid="action-edit"]',
+  deleteOption: 'a[data-testid="action-delete"]',
+  popup: 'section[class="sc-dmqHEX sc-gHyekI laEziR bHoukU adminjs_Box"]',
+  confirmButton: 'button[label="Confirm"]',
 };

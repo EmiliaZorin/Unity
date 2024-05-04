@@ -1,6 +1,6 @@
-const userEmail = 'admin@example.com';
-const password = 'password';
-const url = 'http://localhost:3000/admin/login';
+const userEmail = 'example@example.com';
+const password = '********';
+const url = 'http://localhost:PORT/admin';
 
 export function getUserEmail() {
   return userEmail;

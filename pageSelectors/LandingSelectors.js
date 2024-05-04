@@ -17,4 +17,7 @@ export const landingSelectors = {
   publishersTable: 'section[data-css="Publisher-list-table-wrapper"]',
   actionButton: 'div[class="sc-cPlDXj crxVEM adminjs_ButtonGroupItem"]',
   editOption: 'a[data-testid="action-edit"]',
+  noticeMessage: 'div[data-css="notice-wrapper"]',
+  noticeMessageCloseButton: 'button[class="sc-hLseeU idkrqu adminjs_Button"]',
+  menuItemDiv: 'div[class="sc-iCmkLe hdeNhd"]',
 };

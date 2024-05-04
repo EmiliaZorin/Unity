@@ -28,6 +28,7 @@ exports.LandingPage = class LandingPage {
   }
 
   async assertTopBarLoaded() {
+    console.log('Assert top bar loaded');
     await expect(this.topbar).toBeVisible({ timeout: timeouts.longTimeout });
     await expect(this.langArea, { hasText: constValues.langEnglish }).toBeVisible({ timeout: timeouts.longTimeout });
     const userEmail = await getUserEmail();
@@ -36,6 +37,7 @@ exports.LandingPage = class LandingPage {
   }
 
   async assertMainAreaLoaded() {
+    console.log('Assert maim area loaded');
     if (await this.mainAreaTitle.isVisible()) {
       await expect(this.mainAreaDescription).toBeVisible({ timeout: timeouts.longTimeout });
     } else {
@@ -44,6 +46,7 @@ exports.LandingPage = class LandingPage {
   }
 
   async assertSideMenuLoaded() {
+    console.log('Assert side Menu loaded');
     await this.page.waitForTimeout(timeouts.shortTimeout);
     if (await this.sideMenuButton.isVisible()) {
       await this.sideMenuButton.click();
@@ -59,6 +62,7 @@ exports.LandingPage = class LandingPage {
   }
 
   async assertFolderMenuVisible() {
+    console.log('Assert folder menu visible');
     if (await this.folderMenu.locator(landingSelectors.closedCaret).isVisible()) {
       await this.folderMenu.locator(landingSelectors.closedCaret).click();
     }
@@ -68,8 +72,20 @@ exports.LandingPage = class LandingPage {
   }
 
   async assertPagesMenuVisible() {
+    console.log('Assert pages menu visible');
     await expect(this.pagesLabel).toBeVisible();
     await expect(this.page.locator(landingSelectors.menuItem, { hasText: constValues.dashboardLabel })).toBeVisible({ timeout: timeouts.longTimeout });
     await expect(this.page.locator(landingSelectors.menuItem, { hasText: constValues.desighSystemsLabels })).toBeVisible({ timeout: timeouts.longTimeout });
+  }
+
+  async closeNoticeMessage() {
+    console.log('Close notice pop up');
+    const notice = await this.page.locator(landingSelectors.noticeMessage);
+    let noticeAmount = await notice.count();
+    console.log('noticeAmount ', noticeAmount);
+    while (noticeAmount > 0) {
+      noticeAmount--;
+      await notice.nth(noticeAmount).locator(landingSelectors.noticeMessageCloseButton).click({ timeout: timeouts.longTimeout });
+    }
   }
 };
